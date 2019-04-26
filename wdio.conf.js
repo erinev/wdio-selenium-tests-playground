@@ -44,7 +44,7 @@ const wdioConfig = {
 
     // On before logic here (this logic might throw errors (let say login failed because login button is not visible after timeout))
 
-    throw Error('error'); // TODO: why thrown exceptions (waitUntil, etc) doesn't stop execution ?
+    throw Error('!!!!!!!!!!!!!!!!!!!! Some error is thrown in before() hook !!!!!!!!!!!!!!!!!!!!'); // TODO: why thrown exceptions (waitUntil, etc) doesn't stop execution ?
   },
   afterTest(test) {
     // If test failed take screenshot logic here
