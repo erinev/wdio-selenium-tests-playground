@@ -4,8 +4,25 @@
 
 <h1>My fake app</h1>
 <!-- this link element is styled as button with css in our real app -->
-<a class="btn btn-flat btn-success create-link-disabled" disabled="disabled">Disabled Save button</a>
-<a class="btn btn-flat btn-success create-link-enabled">Enabled Save button</a>
+<a id="link-disabled" disabled="disabled">Disabled Link</a>
+<!-- <a class="btn btn-flat btn-success create-link-enabled">Enabled Save button</a> -->
+
+<input id="text-input-disabled" type="text" disabled="disabled" placeholder="disabled text input">
+
+<input id="button-input-disabled" type="button" value="Disabled button input" onclick="alert('clicked input button!')" disabled="disabled">
+
+<select id="select-disabled" name="cars" disabled="disabled">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+
+<textarea id="textarea-disabled" name="message" rows="10" cols="30" disabled="disabled">
+  Disabled text area
+</textarea>
+
+<button id="button-disabled" type="button" onclick="alert('clicked button!')" disabled="disabled">Disabled button</button>
 
 </body>
 </html>
