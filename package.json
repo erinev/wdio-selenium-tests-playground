@@ -1,0 +1,45 @@
+{
+  "name": "wdio-selenium-tests-playground",
+  "version": "1.0.0",
+  "description": "E2E selenium tests running playground using webdriverio",
+  "main": "index.js",
+  "scripts": {
+    "e2e": "wdio"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erinev/wdio-selenium-tests-playground"
+  },
+  "author": {
+    "name": "Erikas Neverdauskas",
+    "email": "erikasnever@hotmail.com",
+    "url": "https://github.com/erinev"
+  },
+  "tags": [
+    "webdriver.io",
+    "mocha",
+    "chai",
+    "wdio-cli",
+    "e2e tests",
+    "selenium"
+  ],
+  "dependencies": {
+    "@wdio/cli": "5.7.15",
+    "@wdio/devtools-service": "5.7.13",
+    "@wdio/local-runner": "5.7.15",
+    "@wdio/mocha-framework": "5.7.14",
+    "@wdio/spec-reporter": "5.7.13",
+    "@wdio/sync": "5.7.13",
+    "chai": "4.2.0",
+    "eslint": "5.16.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-plugin-import": "2.17.2",
+    "eslint-plugin-wdio": "5.7.8",
+    "mkdirp": "0.5.1",
+    "rimraf": "2.6.3",
+    "superagent": "5.0.2",
+    "webdriverio": "5.7.15",
+    "yargs": "13.2.2"
+  },
+  "devDependencies": {}
+}

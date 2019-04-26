@@ -1,0 +1,36 @@
+{
+  "plugins": [
+    "wdio"
+  ],
+  "extends": [
+    "airbnb-base",
+    "plugin:wdio/recommended"
+  ],
+  "globals": {
+    "browser": true,
+    "$": true,
+    "describe": true,
+    "fdescribe": true,
+    "xdescribe": true,
+    "before": true,
+    "beforeAll": true,
+    "afterAll": true,
+    "beforeEach": true,
+    "afterEach": true,
+    "it": true,
+    "xit": true,
+    "fit": true
+  },
+  "rules": {
+    "class-methods-use-this": "off",
+    "no-use-before-define": "off",
+    "max-len": ["error", 150],
+    "prefer-destructuring": "off",
+    "lines-between-class-members": "off",
+    "no-underscore-dangle": "off",
+    "global-require": "off",
+    "import/no-dynamic-require": "off",
+    "default-case": "off",
+    "linebreak-style": "off"
+  }
+}
