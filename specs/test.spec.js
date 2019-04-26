@@ -25,7 +25,7 @@ describe('Describe -', () => {
     */
   });
 
-  it('wait until disabled button becomes enabled -> using waitForEnabled() fails', () => {
+  it('wait until disabled button becomes enabled -> using waitForEnabled()', () => {
     const disabledButton = $('a.create-link-disabled');
 
     const timeoutMessage = `'${disabledButton.selector}' is not enabled after 5s timeout!`;
