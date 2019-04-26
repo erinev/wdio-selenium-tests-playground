@@ -3,11 +3,21 @@ describe('Test describe -', () => {
     // Before each test logic here
   });
 
-  it('should test something', () => {
-    console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
-    console.log('This should never be reached because exception is thrown in \'before()\' hook');
-    console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+  it('should find disabled link using getAttribute', () => {
+    browser.url('file:///D:/github/erinev/wdio-selenium-tests-playground/app/index.html');
 
-    true.should.be.equal(false);
+    const disabledButton = $('a.create-link-disabled');
+    const enabledButton = $('a.create-link-enabled');
+
+    console.log(`IsEnabled() result for disabled button: ${disabledButton.isEnabled()}`);
+    console.log(`IsEnabled() result for enabled button: ${enabledButton.isEnabled()}`);
+
+    const getDisabledButonAttribute = disabledButton.getAttribute('disabled');
+    const getEnabledButonAttribute = enabledButton.getAttribute('disabled');
+
+    console.log(`GetAttribute() value for disabled button: ${getDisabledButonAttribute}`);
+    console.log(`GetAttribute() value for enabled button: ${getEnabledButonAttribute}`);
+
+
   });
 });
