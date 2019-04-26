@@ -1,23 +1,43 @@
-describe('Test describe -', () => {
+describe('Describe -', () => {
   beforeEach(() => {
-    // Before each test logic here
+    browser.url(`file:///${__dirname}/../app/index.html`);
   });
 
-  it('should find disabled link using getAttribute', () => {
-    browser.url('file:///D:/github/erinev/wdio-selenium-tests-playground/app/index.html');
-
-    const disabledButton = $('a.create-link-disabled');
+  it('console outputs', () => {
     const enabledButton = $('a.create-link-enabled');
+    const disabledButton = $('a.create-link-disabled');
 
-    console.log(`IsEnabled() result for disabled button: ${disabledButton.isEnabled()}`);
-    console.log(`IsEnabled() result for enabled button: ${enabledButton.isEnabled()}`);
+    console.log(`isEnabled() result for ENABLED button: ${enabledButton.isEnabled()}`);
+    console.log(`isEnabled() result for DISABLED button: ${disabledButton.isEnabled()}`);
 
-    const getDisabledButonAttribute = disabledButton.getAttribute('disabled');
-    const getEnabledButonAttribute = enabledButton.getAttribute('disabled');
+    const getEnabledButtonAttribute = enabledButton.getAttribute('disabled');
+    const getDisabledButtonAttribute = disabledButton.getAttribute('disabled');
 
-    console.log(`GetAttribute() value for disabled button: ${getDisabledButonAttribute}`);
-    console.log(`GetAttribute() value for enabled button: ${getEnabledButonAttribute}`);
+    console.log(`getAttribute('disabled') value for ENABLED button: ${getEnabledButtonAttribute}`);
+    console.log(`getAttribute('disabled') value for DISABLED button: ${getDisabledButtonAttribute}`);
 
+    // result:
+    /*
+      [0-0] isEnabled() result for ENABLED button: true
+      [0-0] isEnabled() result for DISABLED button: true  <- incorrect because it says true for DISABLED button
+      [0-0] getAttribute('disabled') value for ENABLED button: null
+      [0-0] getAttribute('disabled') value for DISABLED button: true <- correct disabled attribute is detected for DISABLED button
+    */
+  });
 
+  it('wait until disabled button becomes enabled -> using waitForEnabled() fails', () => {
+    const disabledButton = $('a.create-link-disabled');
+
+    const timeoutMessage = `'${disabledButton.selector}' is not enabled after 5s timeout!`;
+    disabledButton.waitForEnabled(5000, false, timeoutMessage);
+  });
+
+  it('wait until disabled button becomes enabled -> using waitUntil and checking disabled attribute', () => {
+    const disabledButton = $('a.create-link-disabled');
+
+    const waitUntilElementIsNotDisabledCondition = () => !disabledButton.getAttribute('disabled');
+
+    const timeoutMessage = `'${disabledButton.selector}' is not enabled after 5s timeout!`;
+    browser.waitUntil(waitUntilElementIsNotDisabledCondition, 5000, timeoutMessage, 500);
   });
 });
