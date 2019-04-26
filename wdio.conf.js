@@ -2,7 +2,7 @@
 const chai = require('chai');
 
 const wdioConfig = {
-  sync: true,
+  sync: false,
 
   framework: 'mocha',
   mochaOpts: {
