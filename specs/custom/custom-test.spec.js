@@ -1,4 +1,4 @@
-describe('Test describe -', () => {
+describe('Custom test describe -', () => {
   beforeEach(() => {
     // Before each test logic here
   });

@@ -11,4 +11,4 @@
 6) Update *webdriver-manager* binaries with *`webdriver-manager update --standalone`* command
 7) Restore npm packages use command: *`npm i`* (in root project directory)
 8) Start selenium standalone server: *`webdriver-manager start`* (in separate command line)
-9) Run the tests with following command: *`npm run e2e`* (in root project directory)
+9) Run the tests with following command: *`npm test -- --suite allSpecs`* (in root project directory)
