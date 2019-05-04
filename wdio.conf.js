@@ -34,7 +34,7 @@ const wdioConfig = {
 
   suites: {
     allSpecs: ['./specs/*.spec.js'],
-    customSpec: ['./specs/custom/custom.spec.js']
+    customSpec: ['./specs/custom/custom-test.spec.js']
   },
   
   beforeSuite(suite) {
