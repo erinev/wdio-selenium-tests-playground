@@ -32,23 +32,21 @@ const wdioConfig = {
   reporters: ['spec'],
   services: [],
 
-  specs: ['./specs/test.spec.js'],
-  exclude: [],
-
-  onPrepare(config) {
-    // On Prepare logic here (create folder for failed screenshots)
+  suites: {
+    allSpecs: ['./specs/*.spec.js'],
+    customSpec: ['./specs/custom/custom-test.spec.js']
   },
-  before() {
+  
+  beforeSuite(suite) {
+    console.log('>> [beforeSuite] hook called!');
+  },
+  
+  before(config) {
     global.expect = chai.expect;
     chai.Should();
-
-    // On before logic here (this logic might throw errors (let say login failed because login button is not visible after timeout))
-
-    throw Error('!!!!!!!!!!!!!!!!!!!! Some error is thrown in before() hook !!!!!!!!!!!!!!!!!!!!'); // TODO: why thrown exceptions (waitUntil, etc) doesn't stop execution ?
+    
+    console.log('>> [before] hook called!');
   },
-  afterTest(test) {
-    // If test failed take screenshot logic here
-  }
 };
 
 exports.config = wdioConfig;
